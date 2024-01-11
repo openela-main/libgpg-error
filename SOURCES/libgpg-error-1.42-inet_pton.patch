@@ -1,0 +1,30 @@
+From 75e06a7861cb4a8479a382946217e846e9b58154 Mon Sep 17 00:00:00 2001
+From: Jakub Jelen <jjelen@redhat.com>
+Date: Mon, 6 Dec 2021 20:52:57 +0100
+Subject: [PATCH Libgpg-error] configure: Add missing check for logging
+
+* configure.ac: Add missing check for inet_pton to avoid using inet_addr
+  in modern systems.
+--
+
+Signed-off-by: Jakub Jelen <jjelen@redhat.com>
+---
+ configure.ac | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/configure.ac b/configure.ac
+index da013d8..3686a9c 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -215,7 +215,7 @@ AC_SUBST(INSTALLSHELLPATH)
+ 
+ AC_FUNC_FORK
+ AC_CHECK_FUNCS([flockfile vasprintf mmap rand strlwr stpcpy setenv stat \
+-                getrlimit getpwnam getpwuid getpwnam_r getpwuid_r ])
++                getrlimit getpwnam getpwuid getpwnam_r getpwuid_r inet_pton  ])
+ 
+ 
+ #
+-- 
+2.31.1
+
